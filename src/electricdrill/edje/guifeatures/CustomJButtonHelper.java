@@ -25,15 +25,15 @@ import javax.swing.*;
  */
 public class CustomJButtonHelper<E extends JButton> {
 
-    PlacementArray<E> buttons = new PlacementArray<E>();
+    PlacementArray<E> buttons = new PlacementArray<>();
 
-    public void addActionsToButtons(SubAction... actions) {
+    public void addActionsToButtons(SubAction<E>... actions) {
         for (int i = 0; i < actions.length; i++) {
-            if (buttons.get(actions[i].getButton()).getActionCommand().equals(null) || buttons.get(actions[i].getButton().equals(null))) {
-                throw new IllegalArgumentException("You have not provided either an actionCommand or a button for your SubAction to work with in " + actions[i].getButton.toString());
+            if (buttons.get(actions[i].getInherentButton()).getActionCommand().equals(null) || buttons.get(actions[i].getInherentButton()).equals(null)) {
+                throw new IllegalArgumentException("You have not provided either an actionCommand or a button for your SubAction to work with in " + actions[i].getInherentButton().toString());
             } else {
-                buttons.get(actions[i].getButton()).getActionMap().put(actions[i].getActionCommand, actions[i]);
-                buttons.get(actions[i].getButton()).setActionCommand(actions[i].getActionCommand());
+                buttons.get(actions[i].getInherentButton()).getActionMap().put(actions[i].getActionCommand(), actions[i]);
+                buttons.get(actions[i].getInherentButton()).setActionCommand(actions[i].getActionCommand());
             }
         }
     }
