@@ -1,4 +1,4 @@
-package electricdrill.edje.actions;
+package electricdrill.edje.dependencies;
 
 import sun.awt.AWTAccessor;
 

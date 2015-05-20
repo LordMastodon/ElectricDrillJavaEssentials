@@ -1,4 +1,4 @@
-package electricdrill.edje.utils;
+package electricdrill.edje.dependencies;
 
 import java.util.*;
 

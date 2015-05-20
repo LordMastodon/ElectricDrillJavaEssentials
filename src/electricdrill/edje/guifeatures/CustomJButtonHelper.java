@@ -30,7 +30,7 @@ public class CustomJButtonHelper<E extends JButton> {
     public void addActionsToButtons(SubAction<E>... actions) {
         for (int i = 0; i < actions.length; i++) {
             if (buttons.get(actions[i].getInherentButton()).getActionCommand().equals(null) || buttons.get(actions[i].getInherentButton()).equals(null)) {
-                throw new IllegalArgumentException("You have not provided either an actionCommand or a button for your SubAction to work with in " + actions[i].getInherentButton().toString());
+                throw new NullPointerException("You have not provided either an actionCommand or a button for your SubAction to work with in " + actions[i].getInherentButton().toString());
             } else {
                 buttons.get(actions[i].getInherentButton()).getActionMap().put(actions[i].getActionCommand(), actions[i]);
                 buttons.get(actions[i].getInherentButton()).setActionCommand(actions[i].getActionCommand());

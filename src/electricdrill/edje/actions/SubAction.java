@@ -1,5 +1,7 @@
 package electricdrill.edje.actions;
 
+import electricdrill.edje.dependencies.EDArrayTable;
+
 import javax.swing.*;
 import javax.swing.event.SwingPropertyChangeSupport;
 import java.awt.event.ActionEvent;

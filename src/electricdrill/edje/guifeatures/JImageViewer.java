@@ -1,15 +1,15 @@
 package electricdrill.edje.guifeatures;
 
+import electricdrill.edje.listeners.JImageViewerPropertyChangeListener;
+
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicListUI;
-import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class JImageViewer extends JComponent {
 
     private static final String uiClassID = "ImageViewerUI";
 
-    private EDImage EDImage;
+    private static EDImage edImage;
 
     private PropertyChangeListener propertyChangeListener = new JImageViewerPropertyChangeListener();
 
@@ -26,24 +26,15 @@ public class JImageViewer extends JComponent {
     }
 
     public JImageViewer(EDImage newEDImage) {
-        EDImage = newEDImage;
+        edImage = newEDImage;
     }
 
     public void setEDImage(EDImage newEDImage) {
-        EDImage = newEDImage;
+        edImage = newEDImage;
     }
 
-    public EDImage getEDImage() {
-        return EDImage;
-    }
-
-}
-
-class JImageViewerPropertyChangeListener implements PropertyChangeListener {
-
-    @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-
+    public static EDImage getEDImage() {
+        return edImage;
     }
 
 }
